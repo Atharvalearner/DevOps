@@ -1,0 +1,22 @@
+- on-demand delivery of IT resources—including servers, storage, databases, and software—over the internet 
+- pay-as-you-go pricing. 
+- lower costs and increase agility by renting infrastructure from providers like AWS, Microsoft Azure, and Google Cloud rather than maintaining physical data centers. 
+
+
+# Key Service Models
+1. Infrastructure as a Service (IaaS): Rents IT infrastructure (servers, VMs, storage).
+2. Platform as a Service (PaaS): Supplies an on-demand environment for developing and testing software.
+3. Software as a Service (SaaS): Delivers fully managed software applications over the internet. 
+
+
+# Key Deployment Models
+1. Public Cloud: Services delivered over the public internet.
+2. Private Cloud: Cloud computing resources used exclusively by one business.
+3. Hybrid Cloud: A combination of public and private clouds. 
+
+
+# Main Benefits
+Cost Efficiency: Eliminates capital expense of buying hardware/software.
+Scalability: Resources can be scaled up or down instantly.
+Speed: Offers increased agility and rapid innovation.
+Global Reach: Deploy applications worldwide in minutes

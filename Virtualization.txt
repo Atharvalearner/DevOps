@@ -1,0 +1,12 @@
+- It is the creation of a virtual rather than actual version of something
+- such as an operating system (OS), a server, a storage device or network resources, etc
+- Virtualization uses software that simulates hardware functionality in order to create a virtual system. eg. VMworkstation or Oracle VirtualVMbox --> Hypervisor
+
+- Types
+1. Network virtualization 
+2. Storage virtualization
+3. Data virtualization
+4. Desktop virtualization
+5. Application virtualization
+6. Hardware virtualization - Type I(Bare-metal) & II (Hosted)
+7. Operating System virtualization - containerization

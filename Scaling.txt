@@ -1,0 +1,24 @@
+- Scaling means increasing or decreasing the capacity of your system (servers, computing power, storage, etc.) based on load or demand.
+- Scaling helps you handle traffic smoothly
+
+Types of scaling
+1. Vertical Scaling : Add or remove resources on machine
+	Advantages : 	1. Simpler to implement
+			2. Better for monolithic applications
+			3. Easier to maintainance
+	Disadvantages : 1. Hardware limitations
+			2. Downtime during upgrades
+			3. Single point of failure
+			4. Not suitable for massive growth
+
+
+2. Horizontal Scaling : You add more servers in the cluster instead of increasing the size of one server.
+   eg. Add more instances/servers, Add a load balancer, Share traffic across servers
+	Advantages : 	1. Virtually Unlimited Scalability
+			2. Increased Reliability & High Availability
+			3. Zero or Minimal Downtime
+			4. Automatic Scaling
+			5. Better Performance Under High Load
+	Disadvantages : 1. More Complex Architecture
+			2. More Monitoring Needed
+			3. Cost Increases Exponentially	

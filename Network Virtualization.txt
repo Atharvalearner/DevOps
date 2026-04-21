@@ -1,0 +1,21 @@
+# Network Virtualization :
+- Process of abstracting and combining hardware and software network resources into a single, software-based administrative entity
+- It allows administrators to combine physical networks or divide a single network into multiple, secure, isolated virtual networks, enhancing agility and reducing hardware dependence
+
+# Key Features of Network Virtualization :
+1. Abstraction : separates physical network infrastructure from the logical network
+2. Scalability : networks can be scaled up or down without changing the underlying physical network
+3. Isolation : changes in one virtual network do not affect others.
+4. Flexibility : can design and manage virtual networks without constrained physical topology
+5. Cost Efficient
+6. Optimized Performance
+
+# Types of Network Virtualization :
+1. Internal Network Virtualization
+	- Consolidates multiple network components within a single physical network, allowing them to function as separate entities.
+	- eg. include VLANs (Virtual Local Area Networks) and virtual switches
+2. External Network Virtualization :
+	- Combines multiple physical networks or network devices into a single virtualized unit
+	- eg. include VPNs (Virtual Private Networks) and software-defined networking (SDN)-
+
+# Use Cases : Cloud Computing, Data Centres
