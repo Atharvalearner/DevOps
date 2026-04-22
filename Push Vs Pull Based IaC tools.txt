@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Feature                  |	 Push-based Architecture                                     | Pull-based Architecture                                            |
+| -------------------------| --------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Definition               | Controller/master pushes config to target nodes                 | Agents pull config from central server                             |
+| Communication Initiation | From master/controller                                          | From agent (node)                                                  |
+| Examples                 | Ansible, SaltStack 	                                     | Puppet, Chef, SaltStack 			                          |
+| Workflow                 | Admin runs playbook → Controller connects (SSH) → Pushes config | Config stored on server → Agents periodically check → Pull & apply |
+| Agent Requirement        | No agent required                                               |  Agent required                                                    |
+| Execution Style          | On-demand (manual trigger)                                      | Periodic (scheduled polling)                                       |
+| Scalability              | Harder at large scale (1000+ nodes)                             |  Better scalability                                                |
+| Network Dependency       | Controller must reach all nodes                                 | Nodes initiate connection → better in restricted networks          |
+| Real-time Control        | Immediate execution                                             |  Depends on polling interval                                       |
+| Setup Complexity         | Simple                                                          | Slightly complex (agent setup)                                     |
+| Security                 | Needs open access from controller to nodes                      | More secure (nodes initiate outbound connection)                   |
+| Use Case Fit     	   | Small–medium infra, ad-hoc tasks  				     | Large-scale infra, continuous config mgmt     			  |
+| Fault Tolerance  	   | If controller down → no execution 				     | Agents still run based on last config         			  |
+| State Management 	   | Mostly stateless (Ansible)        				     | Stateful (Puppet/Chef maintain desired state) 			  |
+| Learning Curve	   | Easier to start                   				     | Slightly steeper                              			  |
+| Resource Usage  	   | Less on nodes                     				     | More (agent runs continuously)                			  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------

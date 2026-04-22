@@ -1,0 +1,31 @@
+Global infrastructure : 
+- It is designed for high availability and fault tolerance, built around physically separated Regions and Availability Zones (AZs).
+
+
+Region :
+- A physical, geographical location containing at least three, and up to six, independent Availability zones.
+- Regions are fully isolated from each other for fault tolerance.
+- Every Region will act independently of the others, and each will contain at least two Availability Zones.
+- E.g. 
+	- US East:N. Virginia, Ohio-
+	- US West:N. California, Oregon-
+	- Asia Pacific: Mumbai, Seoul, Singapore, Sydney, Tokyo
+
+
+Availability Zone :
+- physical data centers of AWS
+- One or more discrete data centers with redundant power, networking, and connectivity.
+- This is where the actual compute, storage, network, and database resources are hosted.
+- Availability Zones are always referenced by their Code Name, which is defined by the AZs Region Code Name that the AZ belongs to, followed by a letter.
+- E.g. eu-west-1 region (EU Ireland) : eu-west-1a, eu-west-1b, eu-west-1c
+- At least 2 data centers must have to be present in one region as redundant for backups for each other.
+
+
+Edge Locations :
+- sites or resources deployed in major cities and highly populated areas across the globe
+- Generally used to cache data and reduce latency for end-user access by using the Edge Locations as a global Content Delivery Network (CDN)
+- It's primarily used by end users who are accessing and using your services
+▪ E.g. Route 53: DNS Lookup
+	CloudFront
+	Content Delivery Network (CDN)
+

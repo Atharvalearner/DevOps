@@ -1,0 +1,13 @@
+Idempotency : 
+- running the same code multiple times leads to the same result.
+- In IaC, this ensures stability and predictability : eg. Running your Ansible playbook 5 times should leave your infrastructure in the same desired state.
+
+- If you run it :
+	▪ First time → Installs nginx
+	▪ Second time → Checks, finds it’s already installed → Does nothing.
+▪ That’s idempotent behavior.
+
+- Why it matters :
+	▪ Prevents duplicate work or resource creation
+	▪ Makes automation safe to re-run
+	▪ Allows recovery from partial failures easily

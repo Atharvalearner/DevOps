@@ -1,0 +1,21 @@
+- Amazon’s cloud computing platform 
+- provides on-demand IT resources such as servers, storage, databases, networking, AI, DevOps tools, and more all available over the internet and billed only for what you use.
+
+AWS Provides :
+- Virtual servers
+- Global availability (Multi-region)
+- Instant Auto scalability
+- Pay-as-you-go pricing (OPEX)
+- Instant Deployment
+- AWS Manages hardware
+- High Flexiblity
+- Security
+
+Services :
+1. Compute : EC2, Lambda, ECS/EKS
+2. Storage : S3, EBS
+3. Database : RD, DynamoDB, RedShift
+4. Networking : VPC, Route 53, CloudFront
+5. DevOps & Automation : CodePipeline, CodeBuild, CodeDeploy
+6. Security : IAM, KMS, Secrets Manager
+7. Analytics : Athena, Kinesis
