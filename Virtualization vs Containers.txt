@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------------------------
+| Feature 	  | Hardware Virtualization (VMs)	| OS Virtualization (Containers)	|
+-------------------------------------------------------------------------------------------------
+| Virtualizes	  | Physical Hardware			| Operating System Kernel		|
+| Components	  | App + Libraries + Guest OS		| App + Libraries (No Guest OS)		|
+| Size		  | Gigabytes (GB)			| Megabytes (MB)			|
+| Boot Time	  | Minutes				| Seconds/Milliseconds			|
+| Density	  | Low (few VMs per host)		| High (many containers per host)	|
+| Isolation	  | High (Hardware-level)		| Medium (Process-level)		|
+| Security	  | Secure				| Not Secure				|
+| Portable 	  | Less Portable 			| Highly Portable			|
+| Resource 	  | Requires own resources		| share host resources			|
+| Performance	  | Less				| High					|
+| Deployment-speed| Slower				| Faster				|
+-------------------------------------------------------------------------------------------------

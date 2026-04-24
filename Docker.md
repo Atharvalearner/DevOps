@@ -1,4 +1,4 @@
-* an **open-source platform** 
+* an **open-source platform**
 * **automates the deployment, scaling, and management** of applications inside lightweight, portable **containers**
 
 
@@ -35,7 +35,7 @@
 
 &#x09;	▪ Handle resource isolation
 
-3\. **Docker Registry :** 
+3\. ***Docker Registry :***
 
 &#x09;- Collection of docker images
 
@@ -43,7 +43,7 @@
 
 &#x09;- Private : Self-hosted
 
-4\. **Docker Objects (Managed by Daemon) :** 
+4\. ***Docker Objects (Managed by Daemon) :***
 
 &#x09;- **Images**: read-only template with instructions for creating docker containers.
 
@@ -53,7 +53,7 @@
 
 &#x09;	- We pull the images from **DockerHub -> Docker Registry -> Repositories**
 
-&#x09;- **Containers**: Running **instances of docker image**. 
+&#x09;- **Containers**: Running **instances of docker image**.
 
 &#x09;	- Contains one or more running processes.
 
@@ -70,4 +70,18 @@
 
 
 
+
+
+
+***Dockerfile :***
+
+* contains **series of instructions** followed by arguments
+* instructions processed from top to bottom
+* each instruction adds a new layer to image and then commits the image.
+* Key Dockerfile instructions : FROM, ENV, RUN, CMD, EXPOSE, WORKDIR, ADD, COPY
+
+
+
+* Build Image using dockerfile : docker image build -t <image-name> .
+* Run Container of created image : docker container run -d --name <image-name>
 
