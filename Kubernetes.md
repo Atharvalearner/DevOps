@@ -86,45 +86,71 @@
 
 **Kubernetes Objects:**
 
-▪ Pod:
+▪ ***Pod:***
 
 &#x09;- Basic execution unit of Kubernetes application.
 
 &#x09;- Pod Represents processes running on your cluster \& unit of deployment.
 
-&#x09;- It Encapsulates : Application containers, storage resources, unique network IP, Constraints to run container
+&#x09;- It Encapsulates : Application containers, storage resources, unique network IP, Constraints to run container.
 
-▪ Service
+&#x09;- Every POD have an IP Address.
 
-▪ Volume
+&#x09;- Every POD should be able to communicate with every other POD in the same node, and with other POD on other nodes without NAT.
 
-▪ Namespace:  *(refer screenshot or drawn diagram)*
+***▪ Service*** : 
+
+&#x09;- Used to provide stable network access to Pods.
+
+&#x09;- Pods are temporary: They can restart, Their IP addresses can change
+
+&#x09;- Service solves this issue by : Giving a fixed IP/DNS name
+
+&#x09;				 Load balancing traffic between Pods
+
+***▪ Volume*** : 
+
+&#x09;- Used to provide persistent or shared storage to containers inside Pods.
+
+&#x09;- Used as Sharing data between containers.
+
+&#x09;- Even if Pod restarts the Data remains available.
+
+***▪ Namespace:*** 
 
 &#x09;- It's group of objects, or a way to divide cluster resources between multiple users.
 
 &#x09;- a logical partition within a single physical cluster, acting as a "virtual cluster".
 
-&#x09;- It allows you to group and isolate resources (like Pods, Services, and Deployments) from one another namespaces or group of nodes.
+&#x09;- Allows you to group and isolate resources (like Pods, Services, and Deployments) from one another namespaces or group of nodes.
+
+&#x09;- Example: dev namespace, prod namespace, testing namespace
+
+&#x09;	Each environment stays separated.
 
 
 
 
 
-***Deployment***: Defines the desired state of an application (e.g., number of replicas, container image) and manages updates.
-
-***ReplicaSet***: Ensures the specified number of Pods are running. created and managed by the Deployment.
+***# Deployment***: It manages ReplicaSets and provides features like scaling, rolling updates, self-healing, and rollback capabilities for containerized applications.
 
 
 
-***ConfigMaps***: Stores non-sensitive config. data as key-val pairs. Mainly used for environment variables, cmd args or config. files.
+***# ReplicaSet***: Ensures the specified number of Pods are running. created and managed by the Deployment.
 
-***Secrets***: Stores sensitive data like passwords, tokens, ssh-keys. Data is not encrypted(default base64-encoded).
+&#x09;	- Maintains desired replica count, and provide High Availability.
 
 
 
-***Sidecar-container:***
+***# ConfigMaps***: Stores non-sensitive config. data as key-val pairs. Mainly used for environment variables, cmd args or config. files.
 
-&#x09;- container runs alongside a primary application container within the same Pod. 
+***# Secrets***: Stores sensitive data like passwords, tokens, ssh-keys. Data is not encrypted(default base64-encoded).
+
+
+
+***# Sidecar-container:***
+
+&#x09;- container runs alongside a primary application container within the same Pod.
 
 &#x09;- These containers share the same network namespace and storage volumes.
 
