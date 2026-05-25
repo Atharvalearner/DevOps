@@ -1,0 +1,30 @@
+- Set of practices that combines software development (Dev) and IT operations (Ops). 
+- It automate and streamline the software development, testing, deployment, and maintenance process.
+- Aims : shorten the systems development life cycle and provide continuous delivery with high software quality.
+- It integrates CI/CD, Infrastructure as Code (IaC), monitoring, and automation to ensure that software is built, tested, and released seamlessly.
+- DevOps aspects came from Agile methodology.
+
+
+Main benefits of DevOps include:
+1. Faster delivery of features
+2. More stable operating environments
+3. Improved communication and collaboration
+4. More time to innovate (rather than fix/maintain)
+5. Reduced deployment failures and rollbacks
+6. Shorter mean time to recovery
+
+
+DevOps Life Cycle : CI/CD
+Continuous Integration : 
+1. Plan
+2. Code
+3. Build
+4. Test
+
+Continuous Deployment :
+5. Release
+6. Deploy
+7. Operate
+8. Monitor
+
+

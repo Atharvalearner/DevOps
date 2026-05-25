@@ -1,0 +1,11 @@
+Continuous Integration (CI) :
+- developers integrate code into a shared repository frequently.
+- Each integration can then be verified by an automated build and automated tests.
+- for code review use tools like Sonar.
+
+continuous Deployment (CD) :
+- deploy or publish the changes for production automatically through pipeline.
+- helps preventing any last-moment or post-production surprises.
+- It helps developers discover and resolve bugs preemptively.
+
+Continuous Deployment is automated we don't need manual human intervention, but continuous Delivery is manual means whenever the all required feature is ready it will push in specific time by manually.
