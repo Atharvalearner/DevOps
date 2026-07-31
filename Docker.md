@@ -1,87 +1,179 @@
-Open-source platform
-Automates the deployment, scaling, and management of applications inside lightweight, portable containers.
-Client–Server model.
-Docker client sends requests to the Docker Daemon.
-Docker Daemon(dockerd) handles container lifecycle tasks like build, run, manage.
-client and server/host Communication happens over a REST API using sockets or networks.
-
-
-Architecture :
-1. Docker Client (CLI or Docker UI):
-- Primary interface for users to interact with Docker.
-- Client translates them into REST API requests and sends them to the Docker Daemon.
-- A single client can communicate with multiple daemons.
-
-2. The Docker Host/Server :
-- physical or virtual machine that provides the complete environment for executing and running containers. 
-- It contains : Operating System & its kernel, Docker Daemon, Images, Running Containers, Networks and Storage components.
-
-3. Docker Daemon (dockerd) :
-- It is the persistent Background process/service that manage the environment to execute and run containers.
-- It runs on Docker Host/Server.
-- Listens for Docker API requests which is coming from Docker Client.
-- Manages Docker Objects: containers, images, networks, volumes.
-- Can communicate with other daemons or services (Swarm mode)
-- Responsibilities:
-	▪ Create and manage containers
-	▪ Build and store images
-	▪ Manage networks and volumes
-	▪ Handle resource isolation
-
-4. Docker Registry :
-- A remote repository for storing and distributing our Docker images.
-- Public : default - Docker hub
-- Private : Self-hosted, Organization use private registries like Harbor, AWS, Google Artifact Registry for security & control.
+Docker is an open-source containerization platform that packages an application along with all its dependencies into lightweight, portable containers, allowing the application to run consistently across different environments.
 
 
 
-Docker Objects (Managed by Daemon) :
-1. Images: 
-	- read-only template with instructions for creating docker containers.
-	- It is build from Dockerfile.
-	- An image acts like a snapshot of a filesystem and its configuration.
-	- Images are built using a layered file system (UnionFS), where each instruction in docker file acts as a layer.
-	- We pull the images from DockerHub -> Docker Registry -> Repositories.
-2. Containers: 
-	- Running instances of docker image.
-	- Contains one or more running processes.
-	- Containers are read-only or immutable.
-	- Each container isolated from other containers and having its own filesystem, networking & process space.
-	- stored under /var/lib/docker
-	- We can run multiple containers from same image.
+
+
+***# Problem Docker Solves:***
+
+Before Docker, applications were deployed directly on operating systems or inside virtual machines. Different environments often had different library versions, operating systems, or dependencies, leading to the classic problem of 'It works on my machine but not in production.' Docker solves this by packaging the application together with its runtime, libraries, and dependencies into a container
+
+
+
+
+
+**# Architecture :**
+
+1. ***Docker Client (CLI or Docker UI):***
+* Docker client sends requests to the Docker Daemon.
+* It is the interface used by users to interact with Docker.
+* Commands like docker build, docker pull, and docker run are entered here. The client converts these commands into API requests and sends them to the Docker Daemon.
+* A single client can communicate with multiple daemons.
+
+
+
+2. ***The Docker Host/Server :***
+* physical or virtual machine that provides the complete environment for executing and running containers.
+* It contains : Operating System \& its kernel, Docker Daemon, Images, Running Containers, Networks and Storage components.
+
+
+
+***3. Docker Daemon (dockerd) :***
+
+* It is the core background service that listens for Docker API requests(which is coming from docker client) and performs operations such as building images, creating containers, managing networks, and handling storage.
+* It runs on Docker Host/Server.
+* Manages Docker Objects: containers, images, networks, volumes.
+* Can communicate with other daemons or services (Swarm mode)
+* Responsibilities:
+▪ Create and manage containers
+▪ Build and store images
+▪ Manage networks and volumes
+▪ Handle resource isolation
+
+
+
+***4. Docker Registry :***
+
+* A remote repository for storing and distributing our Docker images.
+* Public : default - Docker hub
+* Private : Self-hosted, Organization use private registries like Harbor, AWS, Google Artifact Registry for security \& control.
+
+
+
+
+
+***# Docker Objects (Managed by Daemon) :***
+
+1. Images:
+
+   * read-only template with instructions for creating docker containers.
+   * It is build from Dockerfile.
+   * An image acts like a snapshot of a filesystem and its configuration.
+   * Images are built using a layered file system (UnionFS), where each instruction in docker file acts as a layer.
+   * We pull the images from DockerHub -> Docker Registry -> Repositories.
+2. Containers:
+
+   * Running instances of docker image.
+   * Contains one or more running processes.
+   * Containers are read-only or immutable.
+   * Each container isolated from other containers and having its own filesystem, networking \& process space.
+   * stored under /var/lib/docker
+   * We can run multiple containers from same image.
 3. Storage :
-	- container have writable layer but data is lost when container is deleted. To persist the storage we can use Storage drivers.
-	- Storage driver control and manage images and containers on our docker host/server.
-	- Types of Docker storage : 
-		i) Volumes: Used to write-intensive data, data that must persist beyond the container's lifespan, and data that must be shared between containers. Stored in dedicated area on host/server filesystem.
-		ii) Bind Mounts: Can be stored anywhere on host system. allows containers to share host config. files.
-		iii) tmpfs Mounts: temporary storage that exists only in the host's memory and never written to host filesystem.
-4. Networks: 
-	- It provides complete isolation for containers.
-	- Communication channels used to connect containers or external networks
-	- Types: i) Bridge: Default, Use when different container with same docker host wants to communicate.
-		 ii) Host: When you don't need any isolation between container and host.
-		iii) Overlay: Container communicates with each other, it will enable swarm mode.
-		 iv) macvlan: Assigns a unique MAC to container, to communicate.
-- Volumes: used to persist the data generated by and used by the containers
-- Registry: private or public collection of docker images
+
+   * container have writable layer but data is lost when container is deleted. To persist the storage we can use Storage drivers.
+   * Storage driver control and manage images and containers on our docker host/server.
+   * Types of Docker storage :
+i) Volumes: Used to write-intensive data, data that must persist beyond the container's lifespan, and data that must be shared between containers. Stored in dedicated area on host/server filesystem.
+ii) Bind Mounts: Can be stored anywhere on host system. allows containers to share host config. files.
+iii) tmpfs Mounts: temporary storage that exists only in the host's memory and never written to host filesystem.
+4. Networks:
+
+   * It provides complete isolation for containers.
+   * Communication channels used to connect containers or external networks
+   * Types: i) Bridge: Default, Use when different container with same docker host wants to communicate.
+ii) Host: When you don't need any isolation between container and host.
+iii) Overlay: Container communicates with each other, it will enable swarm mode.
+iv) macvlan: Assigns a unique MAC to container, to communicate.
+* Volumes: used to persist the data generated by and used by the containers
 
 
-Dockerfile :
-- Contains series of instructions followed by arguments.
-- Each instruction adds a new layer to image and then commits the image.
-- Key Dockerfile instructions : FROM, ENV, RUN, CMD, EXPOSE, WORKDIR, ADD, COPY
 
-Runtime (runc): 
-- containerd uses runc to create a new container. 
-- runc interfaces with the Linux kernel to create isolated namespaces and limit resources with cgroups.
 
-Namespaces and control groups (cgroups) :
-- Both are the core Linux kernel features that allow Docker to create isolated environments known as containers.
-- cgroups (control groups) : controls resources of containers like how much each one use CPU, RAM, etc. 
-- Namespace : control what a container can see or Isolation/Visibility. eg. Separate PIDs, hostnames, networks
 
-Image Building :
-Build Image using dockerfile : docker image build -t <image-name> .
-Run Container of created image : docker container run -d --name <image-name>
-Run container on specific port of created image (Port Binding) : docker container run -d --name -p <random-port:system-port> <image-name>
+***# Dockerfile :***
+
+* Contains series of instructions followed by arguments.
+* Each instruction adds a new layer to image and then commits the image.
+* Key Dockerfile instructions : FROM, ENV, RUN, CMD, EXPOSE, WORKDIR, ADD, COPY
+
+
+
+***# Runtime (runc):***
+
+* containers uses runc to create a new container.
+* runc interfaces with the Linux kernel to create isolated namespaces and limit resources with cgroups.
+
+
+
+***# Namespaces and control groups (cgroups) :***
+
+* Both are the core Linux kernel features that allow Docker to create isolated environments known as containers.
+* cgroups (control groups) : controls resources of containers like how much each one use CPU, RAM, etc.
+* Namespace : control what a container can see or Isolation/Visibility. eg. Separate PIDs, hostnames, networks
+
+
+
+***# Image Building :***
+Build Image using dockerfile : *docker image build -t <image-name> .*
+Run Container of created image : *docker container run -d --name <image-name>*
+Run container on specific port of created image (Port Binding) : *docker container run -d --name -p* [*random-port:system-port*](random-port:system-port) *<image-name>*
+
+
+
+
+
+***# Docker Workflow:***
+
+Suppose I execute: docker run nginx
+
+
+
+*User*
+
+*↓*
+
+*Docker Client*
+
+*↓*
+
+*Docker Daemon*
+
+*↓*
+
+*Checks Local Images*
+
+*↓*
+
+*Image Exists?*
+
+*↓*
+
+*Yes → Create Container*
+
+*↓*
+
+*No*
+
+*↓*
+
+*Pull Image*
+
+*↓*
+
+*Create Container*
+
+*↓*
+
+*Run Process*
+
+*↓*
+
+*Container Running*
+
+
+
+***# An application has 3 components i.e. MySQL database and Python Web application and nginx. Explain steps to containerize this application. How to use Docker compose?*** 
+
+I would containerize each component separately by following the one-process-per-container approach. First, I would create a Dockerfile for the Python web application that installs the required dependencies and starts the application. For MySQL and Nginx, I would use their official Docker images. Next, I would use Docker Compose to define all three services in a single docker-compose.yml file. Docker Compose automatically creates a private network, allowing the Python application to communicate with the MySQL container using its service name, while Nginx forwards client requests to the Python application. I would configure environment variables for database credentials instead of hard-coding them, and attach a Docker volume to the MySQL container so the database persists even if the container is recreated. Finally, I would start the complete application stack using docker compose up -d and manage it with commands like docker compose ps, docker compose logs, and docker compose down. This approach provides consistent deployment, easier management, and isolation between services.
+

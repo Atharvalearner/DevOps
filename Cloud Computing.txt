@@ -9,11 +9,6 @@
 3. Software as a Service (SaaS): Delivers fully managed software applications over the internet. 
 
 
-# Key Deployment Models
-1. Public Cloud: Services delivered over the public internet.
-2. Private Cloud: Cloud computing resources used exclusively by one business.
-3. Hybrid Cloud: A combination of public and private clouds. 
-
 
 # Main Benefits
 Cost Efficiency: Eliminates capital expense of buying hardware/software.

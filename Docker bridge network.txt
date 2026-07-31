@@ -1,0 +1,14 @@
+A Docker bridge network is a private, virtual router inside your computer that lets your containers talk to each other while keeping them hidden from the outside world.
+
+Think of it like a private Wi-Fi network inside your computer where your containers are the devices connected to it.
+
+How It Works:
+- The Virtual Router: Docker creates a digital switch (called docker0) on your machine.
+
+- Private Mailboxes: Every container you start gets its own private IP address.
+
+- Internal Chatting: Containers on the same bridge can talk directly to each other.
+
+- The Firewall Wall: Outside users cannot talk to these containers unless you explicitly open a door (port mapping).
+
+- Internet Access: Containers can look out at the internet, but the internet cannot look back in.

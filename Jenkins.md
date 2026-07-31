@@ -1,66 +1,45 @@
-\- **Master-slave** architecture
+Jenkins is an open-source automation server used to implement Continuous Integration and Continuous Delivery. It automates software development tasks such as building, testing, and deploying applications. Jenkins follows a Controller-Agent architecture. The Controller acts as the central management server that receives build requests, manages pipelines, stores configuration, schedules jobs, and assigns work to Agents. Agents are machines or containers that execute the actual build, test, and deployment tasks. Jenkins Pipelines, defined in a Jenkinsfile, describe the complete CI/CD workflow as code, including stages such as source code checkout, build, testing, packaging, and deployment. Jenkins plugins extend its functionality by integrating with tools such as GitHub, Docker, Kubernetes, Maven, SonarQube, and cloud platforms. In a typical workflow, a developer pushes code to GitHub, a webhook triggers Jenkins, the Controller assigns the job to an appropriate Agent, the Agent checks out the code, builds and tests the application, creates the deployment artifact, deploys it to the target environment, and finally sends build notifications
 
-\- **Automation**: Automates repetitive tasks such as builds, tests, and deployments.
 
-\- Jenkins server (master) manages build jobs and delegates their execution to agent nodes (slaves). 
 
 \- This setup ensures efficient resource utilization and parallel execution.
 
 \- **Supports multiple programming languages** and tech stacks, including Java, Python, JavaScript, and more.
 
-\- Ease of Setup: Provides a user-friendly web-based GUI for configuration.
 
 
-
-**Architecture :**
+**# Architecture :**
 
 ***1. Master/Controller Server:***
 
-\- Central Brain: Acts as the management hub for the entire Jenkins environment.
-
-\- Schedules build jobs and assigns tasks to agents.
-
-\- Handles plugin loading, configuration, and monitoring the health of the system.
-
-\- It stores all the configuration data, including information tasks to run, when to run them, and where to run them.
-
-\- It continuously monitors code repositories like GitHub or GitLab for changes and triggers builds when new code is 
-
-committed.
+* Central Brain: Acts as the management hub for the entire Jenkins environment.
+* The Jenkins Controller is the central management server. It receives build requests, schedules jobs, loads plugins, manages pipelines, stores configuration, and assigns build tasks to appropriate agents.
+* It continuously monitors code repositories like GitHub or GitLab for changes and triggers builds when new code is committed.
+* Responsibilities: Receives build triggers, Manages pipelines, Stores configurations, Assigns jobs, Monitors agents, Maintains build history
 
 
 
 ***2. Slave/Agent node:***
 
-\- A machine or container that executes the actual tasks (build, test, etc.) assigned by the controller.
-
-\- When the master decides a build needs to run, it sends instructions to an available agent, which then executes those instructions.
-
-\- Agents can run on different operating systems (Windows, Linux, etc) allowing you to test application on multiple platforms.
-
-\- Each agent can have labels describing its capabilities, like "linux," "docker," or "high-memory," helping Jenkins choose the right agent for each job.
+* A machine or container that executes the actual tasks (build, test, etc.) assigned by the controller.
+* A Jenkins Agent is a machine or container that performs the actual build, test, or deployment tasks assigned by the Controller. Using multiple agents enables parallel execution and supports different operating systems or environments.
+* Each agent can have labels describing its capabilities, like "linux," "docker," or "high-memory," helping Jenkins choose the right agent for each job.
 
 
 
 ***3. Jenkins Job:***
 
-Unit of Work: A single automated task, such as a script execution or a project build.
-
-Efficiency: Automates repetitive manual steps to reduce human error and speed up the development cycle.
+Unit of Work: A single automated task, It is an automated task such as compiling source code, running unit tests, executing scripts, or deploying an application. Jobs can be configured as Freestyle projects or as Pipelines.
 
 
 
 ***4. Jenkins Plugins:***
 
-\- Expand Jenkins' core functionality.
-
-Integration: Connects Jenkins to external tools like GitHub, Slack, Docker, and various cloud providers.
+Integrate Jenkins with external tools and services such as GitHub, Docker, Kubernetes, Maven, SonarQube, Slack, AWS, and many others, allowing Jenkins to support a wide range of DevOps workflows.
 
 
 
 ***5. Jenkins Pipeline:***
 
-Workflow as Code: A suite of plugins that lets you define the entire CI/CD process via a script (Jenkinsfile).
-
-End-to-End Automation: Automatically chains together the building, testing, and delivery phases into one continuous flow.
+Defines the complete CI/CD workflow as code using a Jenkinsfile. It automates stages such as source code checkout, build, testing, packaging, and deployment.
 
