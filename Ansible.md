@@ -1,4 +1,18 @@
-Ansible is an **agentless, open-source automation tool** that uses **YAML playbooks** to define and **enforce the desired state** of infrastructure and applications.
+* Ansible is an IT automation and Configuration Management tool developed by Red Hat. It is used to automate software installation, system configuration, application deployment, user management, service management, and repetitive administrative tasks across multiple servers.
+* Unlike Terraform, which provisions infrastructure, Ansible configures the operating system and applications after the infrastructure has been created.
+
+
+
+**# Why is Ansible preferred?**
+
+Ansible is preferred because it is agentless, simple to use, and automates repetitive administrative tasks. It communicates over SSH, so no additional software needs to be installed on the managed servers. It also uses YAML-based playbooks, which are easy to read and maintain.
+
+
+
+
+
+**# Ansible:**
+an **agentless, open-source automation tool** that uses **YAML playbooks** to define and **enforce the desired state** of infrastructure and applications.
 
 
 

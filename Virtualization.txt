@@ -1,3 +1,6 @@
+Virtualization is the technology of creating virtual versions of computing resources such as servers, operating systems, storage, or networks instead of using dedicated physical hardware. It enables multiple isolated virtual machines to run on a single physical server using a hypervisor, which allocates CPU, memory, storage, and networking resources to each VM. This improves hardware utilization, reduces infrastructure costs, simplifies management, and provides isolation between workloads. There are two types of hypervisors: Type 1, which runs directly on hardware, such as VMware ESXi and Hyper-V, and Type 2, which runs on top of a host operating system, such as Oracle VirtualBox and VMware Workstation. Virtualization is widely used in data centers, cloud computing, and enterprise environments to efficiently manage IT infrastructure
+
+# Virtualization:
 - It is the creation of a virtual rather than actual version of something
 - such as an operating system (OS), a server, a storage device or network resources, etc
 - Virtualization uses software that simulates hardware functionality in order to create a virtual system. eg. VMworkstation or Oracle VirtualVMbox --> Hypervisor
