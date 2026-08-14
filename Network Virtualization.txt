@@ -1,3 +1,6 @@
+Network virtualization is the technology of abstracting physical network resources and creating logical or virtual networks on top of the physical infrastructure. It allows multiple isolated networks, virtual switches, routers, and other network components to share the same physical infrastructure. It improves resource utilization, reduces hardware dependency, provides network isolation, and makes network management and automation easier. Examples include VLANs, virtual switches, software-defined networking, cloud virtual networks, and overlay networks.
+
+
 # Network Virtualization :
 - Process of abstracting and combining hardware and software network resources into a single, software-based administrative entity
 - It allows administrators to combine physical networks or divide a single network into multiple, secure, isolated virtual networks, enhancing agility and reducing hardware dependence

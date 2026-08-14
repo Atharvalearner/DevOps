@@ -1,6 +1,10 @@
-\- Pooling of physical storage from multiple network storage devices into what appears to be a 
+Storage virtualization is the technology of abstracting physical storage devices and presenting them as logical storage resources or storage pools. Instead of servers directly managing individual physical disks, a virtualization layer manages the underlying storage and presents logical volumes or storage to the servers. It helps improve storage utilization, simplify management, provide flexibility in allocating and expanding storage, and reduce dependency on specific physical storage hardware. It is commonly used in data centers, SANs, cloud environments, and technologies such as LVM and VMware vSAN.
 
-**single storage device / unit**.
+
+
+**# Storage virtualization :**
+
+\- Pooling of physical storage from multiple network storage devices into what appears to be a **single storage device / unit**.
 
 \- **LVM (Logical Volume Management)** is the best example of it.
 

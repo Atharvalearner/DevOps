@@ -8,6 +8,42 @@
 
 
 
+
+
+**# Architecture:**
+
+&#x20;                        Kubernetes Cluster
+
+&#x20;                ┌──────────────┴──────────────┐
+
+&#x20;                │                             │
+
+&#x20;         CONTROL PLANE                    WORKER NODES
+
+&#x20;    ┌───────────┼───────────┐          ┌──────┼──────┐
+
+&#x20;    │           │           │          │      │      │
+
+&#x20;API Server     etcd      Scheduler   kubelet kube-proxy
+
+&#x20;    │                                  │
+
+&#x20;    │                           Container Runtime
+
+&#x20;    │                                  │
+
+&#x20;    │                                  ▼
+
+&#x20;    │                                 Pods
+
+&#x20;Controller Manager
+
+
+
+
+
+
+
 **Cluster :**
 
 \- Set of machines (nodes), that run containerized applications managed by Kubernetes
@@ -98,7 +134,7 @@
 
 &#x09;- Every POD should be able to communicate with every other POD in the same node, and with other POD on other nodes without NAT.
 
-***▪ Service*** : 
+***▪ Service*** :
 
 &#x09;- Used to provide stable network access to Pods.
 
@@ -108,7 +144,7 @@
 
 &#x09;				 Load balancing traffic between Pods
 
-***▪ Volume*** : 
+***▪ Volume*** :
 
 &#x09;- Used to provide persistent or shared storage to containers inside Pods.
 
@@ -116,7 +152,7 @@
 
 &#x09;- Even if Pod restarts the Data remains available.
 
-***▪ Namespace:*** 
+***▪ Namespace:***
 
 &#x09;- It's group of objects, or a way to divide cluster resources between multiple users.
 

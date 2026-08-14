@@ -1,12 +1,12 @@
-Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, networking, and management of containerized applications across a cluster of machines. While Docker is responsible for creating and running individual containers, Kubernetes manages those containers at scale, ensuring high availability, automatic scaling, load balancing, rolling updates, and self-healing. 
+Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, networking, and management of containerized applications across a cluster of machines. While Docker is responsible for creating and running individual containers, Kubernetes manages those containers at scale, ensuring high availability, automatic scaling, load balancing, rolling updates, and self-healing.
 
 
 
-A Kubernetes cluster consists of a Control Plane and one or more Worker Nodes. 
+A Kubernetes cluster consists of a Control Plane and one or more Worker Nodes.
 
-The Control Plane manages the cluster using components such as the API Server, which receives all requests; etcd, which stores the cluster state; the Scheduler, which assigns Pods to suitable nodes; and the Controller Manager, which ensures the actual state matches the desired state. 
+The Control Plane manages the cluster using components such as the API Server, which receives all requests; etcd, which stores the cluster state; the Scheduler, which assigns Pods to suitable nodes; and the Controller Manager, which ensures the actual state matches the desired state.
 
-Worker Nodes run the application workloads using Kubelet, Kube-proxy, and a Container Runtime such as containerd. 
+Worker Nodes run the application workloads using Kubelet, Kube-proxy, and a Container Runtime such as containerd.
 
 
 
@@ -20,9 +20,39 @@ Docker can create and run containers, but managing hundreds of containers across
 
 
 
-***# Example:*** 
+***# Example:***
 
 Suppose Netflix has 150 Servers contains 10,000 Containers
 
 Can we manage them manually? No. Kubernetes does it automatically.
+
+
+
+
+
+&#x20;                        Kubernetes Cluster
+
+&#x20;                ┌──────────────┴──────────────┐
+
+&#x20;                │                             │
+
+&#x20;         CONTROL PLANE                    WORKER NODES
+
+&#x20;    ┌───────────┼───────────┐          ┌──────┼──────┐
+
+&#x20;    │           │           │          │      │      │
+
+&#x20;API Server     etcd      Scheduler   kubelet kube-proxy
+
+&#x20;    │                                  │
+
+&#x20;    │                           Container Runtime
+
+&#x20;    │                                  │
+
+&#x20;    │                                  ▼
+
+&#x20;    │                                 Pods
+
+&#x20;Controller Manager
 

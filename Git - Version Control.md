@@ -172,7 +172,7 @@ By default, it performs: git fetch and git merge
 
 ***# git merge and git rebase:***
 
-git merge combines two branches by creating a merge commit while preserving the original branch history. 
+git merge combines two branches by creating a merge commit while preserving the original branch history.
 
 git rebase moves or reapplies commits onto another branch to create a cleaner, linear history, but it rewrites commit history and should be used carefully on shared branches.
 

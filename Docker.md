@@ -115,15 +115,25 @@ iv) macvlan: Assigns a unique MAC to container, to communicate.
 
 
 ***# Image Building :***
-Build Image using dockerfile : *docker image build -t <image-name> .*
-Run Container of created image : *docker container run -d --name <image-name>*
-Run container on specific port of created image (Port Binding) : *docker container run -d --name -p* [*random-port:system-port*](random-port:system-port) *<image-name>*
+Build Image using dockerfile : 
+
+***docker image build -t <image-name> .***		<i>.. -t: tag means specific version (default it is latest)</i>
+
+
+Run Container of created image : 
+
+***docker container run -d --name <image-name>***	
+
+
+Run container on specific port of created image (Port Binding) : 
+
+***docker container run -d --name -p*** [***random-port:system-port***](random-port:system-port) ***<image-name>***
 
 
 
 
 
-***# Docker Workflow:***
+**# Docker Workflow:**
 
 Suppose I execute: docker run nginx
 
@@ -173,7 +183,7 @@ Suppose I execute: docker run nginx
 
 
 
-***# An application has 3 components i.e. MySQL database and Python Web application and nginx. Explain steps to containerize this application. How to use Docker compose?*** 
+***# An application has 3 components i.e. MySQL database and Python Web application and nginx. Explain steps to containerize this application. How to use Docker compose?***
 
 I would containerize each component separately by following the one-process-per-container approach. First, I would create a Dockerfile for the Python web application that installs the required dependencies and starts the application. For MySQL and Nginx, I would use their official Docker images. Next, I would use Docker Compose to define all three services in a single docker-compose.yml file. Docker Compose automatically creates a private network, allowing the Python application to communicate with the MySQL container using its service name, while Nginx forwards client requests to the Python application. I would configure environment variables for database credentials instead of hard-coding them, and attach a Docker volume to the MySQL container so the database persists even if the container is recreated. Finally, I would start the complete application stack using docker compose up -d and manage it with commands like docker compose ps, docker compose logs, and docker compose down. This approach provides consistent deployment, easier management, and isolation between services.
 

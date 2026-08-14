@@ -1,4 +1,4 @@
-* **Open-source infrastructure as code (IaC) tool** 
+* **Open-source infrastructure as code (IaC) tool**
 * **enables users to define, provision, and manage cloud and on-premises resources** (like VMs, networks, and SaaS) **using a declarative configuration language (HCL).**
 * It manages **infrastructure lifecycle** by creating execution plans and using "**providers**" to interact with various cloud platforms (AWS, Azure, GCP).
 * Manage low-level components like compute / EC2, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
@@ -61,9 +61,7 @@ The core **Terraform workflow consists of three stages** :
 
 ▪ Terraform utilizes the state file to determine the changes that need to be made to the infrastructure when a new configuration is applied.
 
-▪ It is crucial to safeguard the state file and maintain frequent backups since it contains sensitive information about the infrastructure 
-
-being managed.
+▪ It is crucial to safeguard the state file and maintain frequent backups since it contains sensitive information about the infrastructure being managed.
 
 
 

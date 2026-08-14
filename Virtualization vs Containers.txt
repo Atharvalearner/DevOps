@@ -1,3 +1,5 @@
+Virtualization creates virtual machines using a hypervisor, and each virtual machine has its own guest operating system and kernel. Containerization provides OS-level isolation where multiple containers share the host operating system's kernel. Because containers don't require a separate guest OS, they are generally more lightweight and start faster than virtual machines. VMs are useful when we need complete OS isolation or need to run different operating systems on the same physical server, while containers are commonly used for application deployment, microservices, CI/CD, and scalable workloads. They are not replacements for each other and are often used together—for example, running Docker containers inside an AWS EC2 virtual machine.
+
 -------------------------------------------------------------------------------------------------
 | Feature 	  | Hardware Virtualization (VMs)	| OS Virtualization (Containers)	|
 -------------------------------------------------------------------------------------------------

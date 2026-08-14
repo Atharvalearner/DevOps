@@ -36,6 +36,40 @@ Traditional disk partitions are fixed in size. Suppose I create a 100 GB partiti
 
 
 
+&#x20;             Physical Storage
+
+&#x20;           /        |        \\
+
+&#x20;      /dev/sdb   /dev/sdc   /dev/sdd
+
+&#x20;         │          │          │
+
+&#x20;         ▼          ▼          ▼
+
+&#x20;        PV         PV         PV
+
+&#x20;          \\         |         /
+
+&#x20;           └──── Volume Group ────┐
+
+&#x20;                                  │
+
+&#x20;                    ┌─────────────┼─────────────┐
+
+&#x20;                    ▼             ▼             ▼
+
+&#x20;                   LV1           LV2           LV3
+
+&#x20;                    │             │             │
+
+&#x20;                 ext4           xfs            ext4
+
+&#x20;                    │             │             │
+
+&#x20;                  /data        /backup        /home
+
+
+
 
 
 1. ***Physical Volume:***
@@ -86,13 +120,13 @@ sudo fdisk -l 			# list partitions
 
 sudo fdisk /dev/sda 		# create partitions on disks
 
-sudo fdisk /dev/sdb 
+sudo fdisk /dev/sdb
 
 
 
 sudo pvcreate /dev/sda1 	# create physical volumes
 
-sudo pvcreate /dev/sdb1 
+sudo pvcreate /dev/sdb1
 
 
 
@@ -108,7 +142,7 @@ sudo vgdisplay 				# display volume group
 
 sudo lvcreate -n lv1 -L 1024M myvg 	# create logical volumes
 
-sudo lvcreate -n lv2 -L 2.5G myvg 
+sudo lvcreate -n lv2 -L 2.5G myvg
 
 
 
@@ -118,13 +152,13 @@ sudo lvdisplay 				# display logical volumes
 
 sudo mkfs -t ext4 /dev/myvg/lv1 	# create filesystem on logical volumes
 
-sudo mkfs -t ext4 /dev/myvg/lv2 
+sudo mkfs -t ext4 /dev/myvg/lv2
 
 
 
 sudo mount /dev/myvg/lv1 /mnt/dir1 	# mount logical volumes
 
-sudo mount /dev/myvg/lv2 /mnt/dir2 
+sudo mount /dev/myvg/lv2 /mnt/dir2
 
 
 
@@ -134,9 +168,9 @@ df -Th 					# check mounted filesystems with type
 
 sudo vim /etc/fstab 			# edit fstab for permanent mount add following entries
 
-\# partition          mount point     fs      defaults        defaults 
+\# partition          mount point     fs      defaults        defaults
 
-/dev/mapper/myvg-lv1 /mnt/dir1      ext4    defaults         0 0 
+/dev/mapper/myvg-lv1 /mnt/dir1      ext4    defaults         0 0
 
-/dev/mapper/myvg-lv2 /mnt/dir2      ext4    defaults        0 0 
+/dev/mapper/myvg-lv2 /mnt/dir2      ext4    defaults        0 0
 

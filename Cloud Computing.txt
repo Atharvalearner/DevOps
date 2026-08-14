@@ -1,13 +1,24 @@
+Cloud computing is the delivery of computing resources such as compute, storage, networking, databases, and software over a network on demand, usually with a pay-as-you-go pricing model. Instead of purchasing and maintaining physical infrastructure ourselves, we can provision resources from cloud providers such as AWS, Azure, or GCP whenever required. The main benefits are on-demand provisioning, scalability, elasticity, resource pooling, high availability, and reduced infrastructure management. Cloud services are commonly divided into IaaS, PaaS, and SaaS. For example, AWS EC2 is an IaaS service where we manage the operating system and application, while the cloud provider manages the underlying physical infrastructure
+
+
+# Cloud Computing:
 - on-demand delivery of IT resources—including servers, storage, databases, and software—over the internet 
 - pay-as-you-go pricing. 
 - lower costs and increase agility by renting infrastructure from providers like AWS, Microsoft Azure, and Google Cloud rather than maintaining physical data centers. 
 
 
 # Key Service Models
-1. Infrastructure as a Service (IaaS): Rents IT infrastructure (servers, VMs, storage).
-2. Platform as a Service (PaaS): Supplies an on-demand environment for developing and testing software.
-3. Software as a Service (SaaS): Delivers fully managed software applications over the internet. 
+1. Infrastructure as a Service (IaaS): 
+- Provides basic infrastructure resources such as virtual machines, storage, and networking.
+- eg. AWS, Azure, GCP provides ec2, security groups, vpc, etc
 
+2. Platform as a Service (PaaS): 
+- Provides a managed application platform where developers can deploy applications without managing the underlying infrastructure and operating system.
+- Examples: AWS Elastic Beanstalk, Google App Engine, Azure App Service, Heroku, Versel, Railway, etc
+
+3. Software as a Service (SaaS): 
+- Provides a complete software application to users over the internet.
+- Examples: Gmail, Zoom, Netflix, Canva, Microsoft 365, Salesforce, etc
 
 
 # Main Benefits
